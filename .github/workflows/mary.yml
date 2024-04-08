@@ -1,0 +1,37 @@
+name: my solo job 
+on: 
+   push:
+    branches:
+        -main
+jobs:
+    jobs1:
+      runs-on: ubuntu-latest
+      steps: 
+        - name: step one
+          uses: actions/checkout@v2
+        - name: step two
+          run: echo 9th wednesday 2024
+
+    jobs2:
+        runs-on: ubuntu-latest
+        steps: 
+        - name: step one
+          uses: actions/checkout@v3
+        - name: step two
+          run: echo 9th wednesday 2024
+
+    jobs3:
+        runs-on: windows-latest
+        steps: 
+        - name: step one
+          uses: actions/checkout@v3
+        - name: step two
+          run: echo 15th wednesday 2024
+    jobs4:
+        needs: [jobs1, jobs2, jobs3]
+        runs-on: macos-latest
+        steps: 
+          - name: step one
+            uses: actions/checkout@v3
+          - name: step two
+            run: echo 9th thursday 2024
