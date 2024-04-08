@@ -2,7 +2,7 @@ name: my solo job
 on: 
    push:
     branches:
-        -main
+        - main
 jobs:
     jobs1:
       runs-on: ubuntu-latest
