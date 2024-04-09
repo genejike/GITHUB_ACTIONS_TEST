@@ -5,7 +5,7 @@
       runs-on: ubuntu-latest
       steps:
          - name: checkout code
-           uses: actions/checkouy@v2
+           uses: actions/checkout@v2
          - name: Python Syntax Checker
            uses: cclauss/Find-Python-syntax-errors-action@v0.2.0
            
