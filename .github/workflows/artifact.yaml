@@ -1,0 +1,16 @@
+name: workflow with artifacts 
+on: push 
+env:
+ ARTIFACT_NAME: my banana artifact 
+jobs: 
+ trial_job:
+   runs-on: ubuntu-latest
+   steps:
+    - name: my artifact
+      uses: actions/checkout@v2
+      run: echo "it works ooooo"
+    - name: upload artifact 
+      uses: actions/upload-artifact@v1
+      run: |
+        echo "the name of my artifact is ${{env.ARTIFACT_NAME}}"
+        echo "hi my name is $ARTIFACT_NAME CYNTHIA
