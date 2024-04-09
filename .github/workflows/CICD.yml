@@ -1,0 +1,21 @@
+name: my cicd pipeline
+on: push
+jobs:
+   test:
+      runs-on: ubuntu-latest
+      steps:
+          - name: test python 
+            run: python hello.py
+   build:
+      needs: [test]
+      runs-on: ubuntu-latest
+      steps:
+          - name: checkout repo
+            uses: actions/checkout@v3
+          - name: create artifact
+            uses: actions/upload-artifacts@v3
+            with: 
+              name: testing python 
+              path: .
+      
+      
